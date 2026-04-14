@@ -1,0 +1,30 @@
+{
+  "name": "aereth-monorepo",
+  "private": true,
+  "packageManager": "pnpm@10.15.1",
+  "engines": {
+    "node": "24.14.1"
+  },
+  "scripts": {
+    "dev": "pnpm -r --parallel --stream --filter @aereth/api --filter @aereth/web dev",
+    "dev:api": "pnpm --filter @aereth/api dev",
+    "dev:web": "pnpm --filter @aereth/web dev",
+    "build": "pnpm -r --sort --stream run build",
+    "typecheck": "pnpm -r --sort --stream run typecheck",
+    "lint": "pnpm -r --sort --stream run lint",
+    "format": "prettier . --write",
+    "format:check": "prettier . --check"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.35.0",
+    "eslint": "^9.35.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "eslint-plugin-react-refresh": "^0.4.20",
+    "globals": "^16.3.0",
+    "prettier": "^3.6.2",
+    "typescript": "^5.9.2",
+    "typescript-eslint": "^8.42.0"
+  }
+}
+
