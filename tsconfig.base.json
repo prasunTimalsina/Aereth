@@ -2,7 +2,8 @@
   "compilerOptions": {
     "paths": {
       "@aereth/shared": ["./packages/shared/src/index.ts"],
-      "@aereth/shared/*": ["./packages/shared/src/*"]
+      "@aereth/shared/*": ["./packages/shared/src/*"],
+      "@aereth/api/*": ["./apps/api/src/*"]
     },
     "strict": true,
     "noUncheckedIndexedAccess": true,

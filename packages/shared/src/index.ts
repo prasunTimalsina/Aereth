@@ -1,4 +1,4 @@
-export { parsePort } from "./config/port";
-export { healthResponseSchema } from "./schemas/health";
-export type { HealthResponse } from "./schemas/health";
+export { parsePort } from "./config/port.js";
+export { healthResponseSchema } from "./schemas/health.js";
+export type { HealthResponse } from "./schemas/health.js";
 
