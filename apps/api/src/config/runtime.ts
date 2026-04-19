@@ -1,7 +1,6 @@
-import { parsePort } from "@aereth/shared";
+import { env } from "./env.js";
 
 export const runtimeConfig = {
-  host: process.env.HOST ?? "127.0.0.1",
-  port: parsePort(process.env.PORT, 3001),
+  host: env.HOST,
+  port: env.PORT,
 };
-
