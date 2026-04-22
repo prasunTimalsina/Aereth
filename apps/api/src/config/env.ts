@@ -14,10 +14,12 @@ if (existsSync(localEnvPath)) {
 }
 
 const envSchema = z.object({
-  NODE_ENV: z.enum(["development", "production"]).default("development"),
+  NODE_ENV: z.enum(["development", "test", "production"]).default("development"),
   HOST: z.string().min(1).default("127.0.0.1"),
   PORT: z.coerce.number().int().min(1).max(65535).default(3001),
-  DATABASE_URL: z.string().min(1, "DATABASE_URL is required"),
+  DATABASE_URL: z.string().url("DATABASE_URL must be a valid database URL"),
+  SESSION_SECRET: z.string().min(32, "SESSION_SECRET must be at least 32 characters"),
+  SESSION_TTL_DAYS: z.coerce.number().int().positive().default(7),
 });
 
 const parsedEnv = envSchema.safeParse(process.env);
